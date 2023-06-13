@@ -1,0 +1,36 @@
+const connection = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: 'Bikerdude7770',
+    database: 'employee_db'
+  });
+
+  async function displayDepartments() {
+    try {
+      const [rows] = await connection.promise().query('SELECT * FROM department');
+      console.log('Departments:');
+      console.table(rows);
+    } catch (error) {
+      console.error('Error retrieving departments:', error);
+    }
+  }
+  
+  async function displayRoles() {
+    try {
+      const [rows] = await connection.promise().query('SELECT * FROM role');
+      console.log('Roles:');
+      console.table(rows);
+    } catch (error) {
+      console.error('Error retrieving roles:', error);
+    }
+  }
+  
+  async function displayEmployees() {
+    try {
+      const [rows] = await connection.promise().query('SELECT * FROM employee');
+      console.log('Employees:');
+      console.table(rows);
+    } catch (error) {
+      console.error('Error retrieving employees:', error);
+    }
+  }

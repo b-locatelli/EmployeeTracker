@@ -1,27 +1,31 @@
+USE employee_db
 INSERT INTO department (name)
-VALUES ("department"),
-       ("department"),
-       ("department"),
-       ("department");
+VALUES ("Construction Worker"),
+       ("Equipment"),
+       ("Schedualing"),
+       ("Management");
 
 
 INSERT INTO role (title, salary, department_id)
-VALUES ("jobrole", 100000, 1),
-       ("jobrole", 100000, 1),
-       ("jobrole", 100000, 2),
-       ("jobrole", 100000, 2),
-       ("jobrole", 100000, 3),
-       ("jobrole", 100000, 3),
-       ("jobrole", 100000, 4),
-       ("jobrole", 100000, 4);
+VALUES ("General Laborer", 75000, 1),
+       ("Skilled laborer", 90000, 1),
+       ("Equipent Maintenance", 50000, 2),
+       ("Equipment operator", 70000, 2),
+       ("Schedualer", 50000, 3),
+       ("Safety Manager", 80000, 4),
+       ("Construction Foreperson", 110000, 4);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("dog", "cat", 3, 1),
-       ("dog", "cat", 5, ),
-       ("dog", "cat", 8, ),
-       ("dog", "cat", 2, ),
-       ("dog", "cat", 3, ),
-       ("dog", "cat", 7, ),
-       ("dog", "cat", 6, ),
-       ("dog", "cat", 1, ),
-       ("dog", "cat", 4, );
+VALUES ("Edward", "Riggs", 6, NULL),
+       ("Douglas", "Sandoval", 7, NULL),
+       ("Marc", "Dotson", 3, 3),
+       ("Wayne", "Norris", 5, 3),
+       ("David", "Manning", 3, 3),
+       ("Aamir", "Hoover", 4, 3),
+       ("Tyrell", "Branch", 1, 6),
+       ("Randy", "Morales", 2, 6);
+
+       SELECT * FROM employee;
+
+
+       
