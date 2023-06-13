@@ -3,6 +3,7 @@ const inquirer = require('inquirer')
 
 const mysql = require('mysql2')
 
+// creates connection to mysql 
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -10,6 +11,7 @@ const connection = mysql.createConnection({
   database: 'employee_db'
 });
 
+// grabs and displays departments
 async function displayDepartments() {
   try {
     const [rows] = await connection.promise().query('SELECT * FROM department');
@@ -21,6 +23,7 @@ async function displayDepartments() {
   console.log("#####")
 }
 
+// grabs and displays roles
 async function displayRoles() {
   try {
     const [rows] = await connection.promise().query('SELECT * FROM role');
@@ -31,6 +34,7 @@ async function displayRoles() {
   }
 };
 
+// grabes and displays employees
 async function displayEmployees() {
   try {
     const [rows] = await connection.promise().query('SELECT * FROM employee');
@@ -41,6 +45,7 @@ async function displayEmployees() {
   }
 };
 
+// creates a new department
 async function newDepartment() {
   const result = await inquirer.prompt([{
     message: 'What would you like to name this department?',
@@ -56,6 +61,7 @@ async function newDepartment() {
  }
 };
 
+// creates a new role
 async function newRole() {
   const result = await inquirer.prompt([{
     message: 'What would you like to name this Role?',
@@ -84,6 +90,7 @@ async function newRole() {
  }
 };
 
+// adds a new employee
 async function newEmployee() {
   const result = await inquirer.prompt([{
     message: 'What is the employees first name?',
@@ -118,6 +125,7 @@ async function newEmployee() {
  }
 };
 
+// updates a employee in the db
 async function updatedEmployee() {
   const result = await inquirer.prompt([{
     message: 'Enter employee id:',
@@ -140,7 +148,7 @@ async function updatedEmployee() {
  }
 };
 
-
+// handles user options
 async function handleOptions() {
     const options = [
         'View All Departments',

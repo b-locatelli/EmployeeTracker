@@ -1,4 +1,6 @@
 USE employee_db
+
+-- adds the department name into the table
 INSERT INTO department (name)
 VALUES ("Construction Worker"),
        ("Equipment"),
@@ -6,6 +8,7 @@ VALUES ("Construction Worker"),
        ("Management");
 
 
+-- adds role information into the table
 INSERT INTO role (title, salary, department_id)
 VALUES ("General Laborer", 75000, 1),
        ("Skilled laborer", 90000, 1),
@@ -15,6 +18,7 @@ VALUES ("General Laborer", 75000, 1),
        ("Safety Manager", 80000, 4),
        ("Construction Foreperson", 110000, 4);
 
+-- adds employees and information into the table
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ("Edward", "Riggs", 6, NULL),
        ("Douglas", "Sandoval", 7, NULL),
