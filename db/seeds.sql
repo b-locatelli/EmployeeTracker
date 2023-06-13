@@ -26,6 +26,6 @@ VALUES ("Edward", "Riggs", 6, NULL),
        ("Randy", "Morales", 2, 6);
 
        SELECT * FROM employee;
-
+       SELECT * FROM department;
 
        
